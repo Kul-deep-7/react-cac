@@ -4,30 +4,43 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
-   function run() {
-     // can write setCount(prevCount => prevCount + 1) too n run() function in UseEffect
-  }
+  //  function run() {
+  //    // can write setCount(prevCount => prevCount + 1) too n run() function in UseEffect
+  // }
 
-   useEffect(()=>{
-    setInterval(() => 
-    setCount(a => {
-      return a + 1})
-      , 1000);
+  //  useEffect(()=>{
+  //   setInterval(() => 
+  //   setCount(a => {
+  //     return a + 1})
+  //     , 1000);
 
-  },[]); //empty array means it will run only once when the component mounts
+  // },[]); //empty array means it will run only once when the component mounts
   
-  //useEffect will make setInterval render only once when the component mounts
-  //if we dont use useEffect, it will create a new interval every time the component re-renders
-  //which will lead to multiple intervals running at the same time
+  // //useEffect will make setInterval render only once when the component mounts
+  // //if we dont use useEffect, it will create a new interval every time the component re-renders
+  // //which will lead to multiple intervals running at the same time
+
+  // return (
+  //   <>
+  //     <h1>count:{count}</h1>
+      
+  //   </>
+  // )
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      console.log("Count is", count); // ❗ stale value (will always log the initial value which is 0)
+    }, 1000);
+
+    return () => clearInterval(id);
+  }, []); //if we put count in the dependency array, it will console log the updated value.
 
   return (
-    <>
-      <h1>count:{count}</h1>
-      
-    </>
-  )
+    <button onClick={() => setCount(c => c + 1)}>Count: {count}</button>
+  );
 }
 
 export default App
