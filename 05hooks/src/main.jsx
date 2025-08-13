@@ -4,9 +4,10 @@ import './index.css'
 import App from './App.jsx'
 import Fetch from './fetch.jsx'
 import UR from './useReducer.jsx'
+import Input from './Input.jsx'
 
 createRoot(document.getElementById('root')).render(
   
-    <App />
+    <Input />
 
 )
