@@ -5,9 +5,10 @@ import App from './App.jsx'
 import Fetch from './fetch.jsx'
 import UR from './useReducer.jsx'
 import Input from './Input.jsx'
+import TodoUR from './todoUR.jsx'
 
 createRoot(document.getElementById('root')).render(
   
-    <Input />
+    <TodoUR />
 
 )
