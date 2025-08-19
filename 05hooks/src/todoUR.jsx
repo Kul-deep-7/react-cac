@@ -7,11 +7,11 @@ import { useReducer } from 'react'
                 ...state, // spread operator to keep existing todos, if not used, the new todo will replace the old ones
                 {
                     id  : Math.random(),
-                    name  : action.storage
+                    name  : action.storage // action.storage has the value from input
                 }
             ]
 
-            case "DELETE" : return state.filter(deleteTodo => deleteTodo.id !== action.deleteid) // this logic means Keep every todo whose id is NOT the one we clicked
+            case "DELETE" : return state.filter(deleteTodo => deleteTodo.id !== action.deleteid) // action.deleteid has the data of todo.id
             // filter out the todo with the id we want to delete.................. If id is NOT equal to the deleteid, keep it.If it IS equal, remove it.
 
             default : return state;
@@ -49,10 +49,10 @@ export default function todoUR() {
   )
 }
 
-/* Whatever I type in the input goes into the action (as payload).
-   That payload is sent to the reducer → switch case "ADD".
+/* Whatever I type in the input goes into the action (as storage).
+   That storage is sent to the reducer → switch case "ADD".
    In "ADD", the spread operator (...state) keeps all the existing todos,
-   and then the new todo (from payload) is added at the end.
+   and then the new todo (from storage) is added at the end.
 
    Example:
    state = ['milk']
@@ -88,8 +88,7 @@ DELETE logic (exact flow):
 
 Notes:
 - filter() returns a NEW array (does not mutate state).
-- Using Math.random() is okay for demos, but can collide;
-  prefer crypto.randomUUID() or Date.now() for real apps.
+
 */
 
 
