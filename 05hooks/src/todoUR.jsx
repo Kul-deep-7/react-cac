@@ -12,7 +12,7 @@ import { useReducer } from 'react'
             ]
 
             case "DELETE" : return state.filter(deleteTodo => deleteTodo.id !== action.deleteid) // this logic means Keep every todo whose id is NOT the one we clicked
-            // filter out the todo with the id we want to delete
+            // filter out the todo with the id we want to delete.................. If id is NOT equal to the deleteid, keep it.If it IS equal, remove it.
 
             default : return state;
         }
