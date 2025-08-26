@@ -27,10 +27,10 @@ export default function todoUR() {
     <div>todoUR: {state.length}</div>
     ADD NEW TASK :              {/*e is the event object, we get the value from input onBlur event*/}
    <input type = 'text' onBlur={(e)=>
-   dispatch({
-    type: 'ADD', 
-    storage : e.target.value
-    })}/> {/*storage: we get the value from input n store it in storage, storage 
+        dispatch({
+            type: 'ADD', 
+            storage : e.target.value
+        })}/> {/*storage: we get the value from input n store it in storage, storage 
     dispatch is just a function where we pass an object (with a type and storage (can pass more key/value pairs)) 
     so the reducer knows what to do. */}
 
