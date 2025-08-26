@@ -1,3 +1,31 @@
+/*How useState works
+
+useState(initialValue) gives you two things in an array:
+State variable → holds the current value (here number, string, msg).
+Setter function → used to update that value (here setNumber, setString, setMsg).
+
+That’s why we write:
+const [state, setState] = useState(initialValue)
+
+Why use number and string in functions (not setNumber and setString)?
+Think of it like this:
+number → the actual value right now.
+setNumber() → the tool to change that value.
+
+You read the value from number because that’s what the user typed.
+You don’t call setNumber here because you are not trying to change the number, you’re only checking it.
+
+When to use each?
+Use the state variable (number, string, msg) → when you want to read the value.
+Use the setter (setNumber, setString, setMsg) → when you want to update/change the value.
+
+So in your example:
+User types → setNumber(e.target.value) updates the number state.
+You check it later with if(number % 2 === 0) ....
+
+*/
+
+
 import React, { useState } from 'react'
 
 export default function EvenOddPalindrome() {
@@ -47,3 +75,5 @@ More reliable, especially if you want to clear/reset it later with setNumber("")
     </div>
   )
 }
+
+
