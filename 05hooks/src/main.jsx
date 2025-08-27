@@ -7,9 +7,10 @@ import UR from './useReducer.jsx'
 import Input from './Input.jsx'
 import TodoUR from './todoUR.jsx'
 import EvenOddPalindrome from './EvenOddPalindrome.jsx'
+import CalculatorUI from './Calculator.jsx'
 
 createRoot(document.getElementById('root')).render(
   
-    <EvenOddPalindrome />
+    <CalculatorUI />
 
 )
