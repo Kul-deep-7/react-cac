@@ -85,3 +85,13 @@ export default function CalculatorUI() {
 }
 
     
+// Mistake: Initially value was stored as a number instead of string
+// Problem: eval() and string operations like slice() only work properly on strings
+// Fix: Make sure useState("") is used (string type), not useState(0) or useState([])
+// "DEL" removes the last character of the current input
+// Uses .slice(0, -1) → takes the string from start till second last character
+// Example: "1234".slice(0,-1) → "123"
+// "C" clears the entire input
+// Just setValue("") → resets the input to empty string
+// "=" evaluates the expression using eval()
+// eval() takes a string expression and computes its value
