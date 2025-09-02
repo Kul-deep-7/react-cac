@@ -15,7 +15,7 @@ function App() {
   return (
     <>
       <form onSubmit={submission}>
-        {/* Personal Info */}
+        
         <fieldset>
           <legend>Personal Information</legend>
 
