@@ -25,6 +25,7 @@ export default function ShoppingCart() {
 
     function DeleteButton(id){
         setItems(items.filter(item => item.id !== id)) 
+        
         /* 
         items.filter(...) 
         Go through every item in the list.
