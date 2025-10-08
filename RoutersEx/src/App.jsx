@@ -8,7 +8,7 @@ function App() {
   return (
     <BrowserRouter> {/* BrowserRouter allows clientside routing in your React application — meaning your app can have multiple pages or views without reloading the browser.*/}
       <nav>
-        <Link to="/">Home</Link> &nbsp; {/*   Link - */}
+        <Link to="/">Home</Link> &nbsp; {/*   Link - <Link> is a special React Router component used to navigate between pages without reloading the browser. */}
         <Link to="/Contact">Contact</Link> &nbsp;
         <Link to="/About">About</Link>
       </nav>
