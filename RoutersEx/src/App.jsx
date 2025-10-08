@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Link, NavLink } from 'react-router-dom';
 import './App.css';
 import Home from './routes/Home';
 import Contact from './routes/Contact';
@@ -10,7 +10,12 @@ function App() {
       <nav>
         <Link to="/">Home</Link> &nbsp; {/*   Link - <Link> is a special React Router component used to navigate between pages without reloading the browser. */}
         <Link to="/Contact">Contact</Link> &nbsp;
-        <Link to="/About">About</Link>
+        <NavLink to="/About" 
+          style={({ isActive }) => ({
+          color: isActive ? "red" : "black",
+          textDecoration: "none"
+        })}
+        >About</NavLink> {/* NavLink is similar to Link but allows you to apply styles to the active link. Here, the About link will turn red when it's the current page. */}
       </nav>
 
       <Routes> {/* Routes is a container (or wrapper) provided by React Router that holds all your Route components. */}
